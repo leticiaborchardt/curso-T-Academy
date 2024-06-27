@@ -1,20 +1,38 @@
 import exercicios.Aluno;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Aluno aluno1 = new Aluno("Letícia", 19, "T-Academy", "a-5468584");
-        aluno1.setMedia(8);
+        Scanner scan = new Scanner(System.in);
 
-        Aluno aluno2 = new Aluno("João", 23, "Desenvolvimento WEB", "a-5464888");
-        Aluno aluno3 = new Aluno("Fernanda", 17, "T-Academy", "a-5468900");
+        ArrayList<Aluno> alunos = new ArrayList<>();
 
-        Aluno[] alunos = new Aluno[3];
-        alunos[0] = aluno1;
-        alunos[1] = aluno2;
-        alunos[2] = aluno3;
+        boolean continuar = true;
+        while (continuar) {
+            System.out.println("1 - Novo aluno\n2 - Ver alunos\n3 - Sair");
 
-        for (Aluno aluno : alunos) {
-            aluno.imprimir();
+            int operacao = scan.nextInt();
+
+            switch (operacao) {
+                case 1:
+                    alunos.add(new Aluno().cadastrar());
+                    break;
+                case 2:
+                    System.out.println("----------- Alunos -----------");
+
+                    for (Aluno aluno : alunos) {
+                        aluno.imprimir();
+                        System.out.println();
+                    }
+                    break;
+                case 3:
+                    continuar = false;
+                    break;
+                default:
+                    System.out.println("Valor inválido");
+            }
         }
     }
 }

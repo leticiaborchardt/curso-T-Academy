@@ -1,4 +1,3 @@
-import ExemploHeranca.Aluno;
 import Exercicio2.Livro;
 
 import java.util.ArrayList;

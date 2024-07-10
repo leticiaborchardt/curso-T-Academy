@@ -1,6 +1,7 @@
 package CorrecaoExAluno;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class GerenciadorAlunos {
     private Map<String, Aluno> alunos;
@@ -51,6 +52,16 @@ public class GerenciadorAlunos {
                 .forEach(aluno -> alunosOrdenados.put(aluno.getKey(), aluno.getValue()));
 
         return alunosOrdenados;
+    }
+
+    public Map<String, List<Aluno>> agruparAlunosPorNota() {
+        return this.alunos.values().stream().collect(Collectors.groupingBy(aluno -> {
+            if (aluno.getNota() >= 90) return "A";
+            else if (aluno.getNota() >= 80) return "B";
+            else if (aluno.getNota() >= 70) return "C";
+            else if (aluno.getNota() >= 60) return "D";
+            else return "F";
+        }));
     }
 
     public Map<String, Aluno> getAlunos() {

@@ -3,6 +3,7 @@ import ExercicioLambda.Pessoa;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
@@ -128,5 +129,29 @@ public class Main {
                 .toList();
 
         System.out.println(listaCombinada);
+
+        // outra forma de fazer
+        List<Integer> listaCombinada2 = IntStream.range(0, lista1.size())
+                .boxed()
+                .flatMap(i -> Arrays.asList(lista1.get(i), lista2.get(i)).stream())
+                .collect(Collectors.toList());
+
+        // outra forma de fazer com listas de tamanhos diferentes
+        List<Integer> lista3 = Arrays.asList(1, 2, 3);
+        List<Integer> lista4 = Arrays.asList(4, 5, 6, 7, 8);
+
+        int maxSize = Math.max(lista3.size(), lista4.size());
+
+        List<Integer> listaCombinada3 = IntStream.range(0, maxSize)
+                .boxed()
+                .flatMap(i -> Arrays.asList(
+                        i < lista3.size() ? lista3.get(i) : null,
+                        i < lista4.size() ? lista4.get(i) : null
+                        ).stream()
+                )
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+
+        System.out.println(listaCombinada3);
     }
 }

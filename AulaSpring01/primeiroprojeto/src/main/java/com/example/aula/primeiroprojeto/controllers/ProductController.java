@@ -1,8 +1,10 @@
 package com.example.aula.primeiroprojeto.controllers;
 
+import com.example.aula.primeiroprojeto.dtos.ProductRecordDTO;
 import com.example.aula.primeiroprojeto.models.ProductModel;
 import com.example.aula.primeiroprojeto.repositories.ProductRepository;
 import jakarta.validation.Valid;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,8 +38,25 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<ProductModel> createProduct(@RequestBody @Valid ProductModel product) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(productRepository.save(product));
+    public ResponseEntity<ProductModel> createProduct(@RequestBody @Valid ProductRecordDTO productDTO) {
+        ProductModel productModel = new ProductModel();
+        BeanUtils.copyProperties(productDTO, productModel);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(productRepository.save(productModel));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updateProduct(@PathVariable(value = "id") UUID id, @RequestBody @Valid ProductRecordDTO productDTO) {
+        Optional<ProductModel> productO = productRepository.findById(id);
+
+        if (productO.isPresent()) {
+            var productModel = productO.get();
+            BeanUtils.copyProperties(productDTO, productModel);
+
+            return ResponseEntity.status(HttpStatus.OK).body(productRepository.save(productModel));
+        }
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found.");
     }
 
     @DeleteMapping("/{id}")

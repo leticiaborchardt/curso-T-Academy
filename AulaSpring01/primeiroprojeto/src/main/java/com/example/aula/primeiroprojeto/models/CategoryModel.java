@@ -1,6 +1,6 @@
 package com.example.aula.primeiroprojeto.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,16 +8,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "product")
+@Table(name = "category")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductModel implements Serializable {
+public class CategoryModel implements Serializable {
     private static final long serialVersionUID = 1;
 
     @Id
@@ -26,9 +26,7 @@ public class ProductModel implements Serializable {
 
     private String name;
 
-    private BigDecimal value;
-
-    @JsonBackReference
-    @ManyToOne
-    private CategoryModel category;
+    @JsonManagedReference
+    @OneToMany(mappedBy = "category")
+    private List<ProductModel> products;
 }

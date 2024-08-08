@@ -1,7 +1,9 @@
 package com.example.aula.primeiroprojeto.controllers;
 
-import com.example.aula.primeiroprojeto.dtos.ProductRecordDTO;
+import com.example.aula.primeiroprojeto.dtos.ProductRecordDto;
+import com.example.aula.primeiroprojeto.models.CategoryModel;
 import com.example.aula.primeiroprojeto.models.ProductModel;
+import com.example.aula.primeiroprojeto.repositories.CategoryRepository;
 import com.example.aula.primeiroprojeto.repositories.ProductRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
@@ -21,6 +23,9 @@ public class ProductController {
     @Autowired
     ProductRepository productRepository;
 
+    @Autowired
+    CategoryRepository categoryRepository;
+
     @GetMapping
     public ResponseEntity<List<ProductModel>> getAllProducts() {
         return ResponseEntity.status(HttpStatus.OK).body(productRepository.findAll());
@@ -38,7 +43,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<ProductModel> createProduct(@RequestBody @Valid ProductRecordDTO productDTO) {
+    public ResponseEntity<ProductModel> createProduct(@RequestBody @Valid ProductRecordDto productDTO) {
         ProductModel productModel = new ProductModel();
         BeanUtils.copyProperties(productDTO, productModel);
 
@@ -46,7 +51,7 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Object> updateProduct(@PathVariable(value = "id") UUID id, @RequestBody @Valid ProductRecordDTO productDTO) {
+    public ResponseEntity<Object> updateProduct(@PathVariable(value = "id") UUID id, @RequestBody @Valid ProductRecordDto productDTO) {
         Optional<ProductModel> productO = productRepository.findById(id);
 
         if (productO.isPresent()) {

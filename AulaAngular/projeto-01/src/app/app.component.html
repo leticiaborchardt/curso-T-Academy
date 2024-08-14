@@ -1,0 +1,9 @@
+<div class="card-container">
+  <card-produto *ngFor="let produto of produtos" 
+    [nome]="produto.nome" 
+    [avaliacao]="produto.avaliacao"
+    [preco]="produto.preco"
+    [imagemUrl]="produto.imagemUrl"
+  >
+  </card-produto>
+</div>

@@ -1,0 +1,27 @@
+.card {
+    background-color: white;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    color: black;
+    margin: 16px 0px;
+}
+
+.card-image {
+    border-radius: 8px;
+}
+
+.card-footer {
+    color: grey;
+    margin: 18px 0px;
+}
+
+.card-produto-preco {
+    font-weight: bold;
+}

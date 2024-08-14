@@ -9,12 +9,10 @@ enum DiasDaSemana {
 }
 
 function verificarDiaUtil(dia: DiasDaSemana): string {
-    switch (dia) {
-        case DiasDaSemana.Sabado:
-        case DiasDaSemana.Domingo:
-            return "Fim de Semana";
-        default:
-            return "Dia Útil";
+    if (dia === DiasDaSemana.Sabado || dia === DiasDaSemana.Domingo) {
+        return "Fim de semana";
+    } else {
+        return "Dia útil";
     }
 }
 

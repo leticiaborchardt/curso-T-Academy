@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-image">
+        <img src="{{product.image}}" alt="{{product.title}}" width="100%">
+    </div>
+    <div class="card-content">
+        <div class="card-header">
+            <div class="card-title">{{product.title}}</div>
+            <div class="card-id"># {{product.id}}</div>
+        </div>
+        <div class="card-price">$ {{product.price}}</div>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-delete" (click)="onDeleteProduct()">Remover</button>
+    </div>
+</div>

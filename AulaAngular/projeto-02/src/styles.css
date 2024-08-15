@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn {
+    background-color: #000000;
+    border-radius: 8px;
+    border-style: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    padding: 10px 16px;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #3a3a3a;
+}
+
+.btn-delete {
+    background-color: #b80046 !important;
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+    background-color: #750000 !important;
+}

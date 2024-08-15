@@ -1,26 +1,34 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Post } from './models/post.model';
-import { PostService } from './services/post.service';
-import { PostComponent } from './components/post/post.component';
+import { ProductService } from './services/product.service';
+import { Product } from './models/product.model';
+import { ProductCardComponent } from "./components/product-card/product-card.component";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, PostComponent],
+  imports: [RouterOutlet, CommonModule, ProductCardComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  posts: Post[] = [];
+export class AppComponent implements OnInit {
+  products: Product[] = [];
+  filteredProduct: Product | null = null;
+  searchId: number | undefined;
+  productNotFound: boolean = false;
 
-  constructor(private postService: PostService) { }
+  constructor(private productService: ProductService) { }
 
-  getPosts(): void {
-    this.postService.getPosts().subscribe(
+  ngOnInit(): void {
+    this.getProducts();
+  }
+
+  getProducts(): void {
+    this.productService.getProducts().subscribe(
       (response) => {
-        this.posts = response;
+        this.products = response;
       },
       (error) => {
         console.error('Erro ao carregar os dados: ', error);
@@ -28,4 +36,36 @@ export class AppComponent {
     )
   }
 
+  getProductById(): void {
+    if (this.searchId) {
+      this.productService.getProductById(this.searchId).subscribe(
+        (response) => {
+          this.filteredProduct = response;
+          this.productNotFound = !response;
+        },
+        (error) => {
+          console.error('Erro ao carregar os dados: ', error);
+        }
+      )
+    } else {
+      this.getProducts();
+      this.productNotFound = false;
+    }
+  }
+
+  deleteProduct(id: number): void {
+    this.productService.deleteProduct(id).subscribe(
+      () => {       
+        this.products = this.products.filter(product => product.id !== id);
+        if (this.filteredProduct?.id == id) {
+          this.filteredProduct = null;
+        }
+
+        alert("Produto removido com sucesso!");
+      },
+      (error) => {
+        console.error('Erro ao remover o produto: ', error);
+      }
+    )
+  }
 }

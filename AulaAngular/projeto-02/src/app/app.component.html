@@ -1,9 +1,25 @@
-<button (click)="getPosts()">Carregar dados</button>
+<div class="container">
+  <header>
+      <input type="text" [(ngModel)]="searchId"  placeholder="Filtrar por ID">
+      <button class="btn" (click)="getProductById()">Filtrar</button>
+  </header>
 
-<!-- <div *ngFor="let post of posts">
-  <pre>{{post | json}}</pre>
-</div> -->
+  <div *ngIf="filteredProduct">
+    <h2>Produto encontrado:</h2>
+    <div class="product-list">
+      <product-card [product]="filteredProduct"></product-card>
+    </div>
+  </div>
 
-<div class="post-list">
-  <post *ngFor="let post of posts" [post]="post"></post>
+  <div *ngIf="productNotFound">
+    <h2>Produto não encontrado!</h2>
+  </div>
+  
+  <div class="product-list">
+    <product-card 
+      *ngFor="let product of products"
+      [product]="product"
+      (deleteProduct)="deleteProduct(product.id)">
+    </product-card>
+  </div>
 </div>

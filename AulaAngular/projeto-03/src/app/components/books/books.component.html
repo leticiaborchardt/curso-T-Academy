@@ -1,0 +1,7 @@
+<a href="/add-book">Adicionar Novo Livro</a>
+<p *ngIf="books.length < 1">Carregando...</p>
+<div *ngFor="let book of books">
+    <h1>{{book.id}} - Title: {{book.title}} - {{book.genre}} - {{book.pages}}pgs</h1>
+    <h2>Author: {{book.author}}</h2>
+    <button (click)="deleteBook(book.id)" >Deletar Livro </button>
+</div>

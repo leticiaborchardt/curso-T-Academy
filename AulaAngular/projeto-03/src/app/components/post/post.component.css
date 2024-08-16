@@ -1,0 +1,12 @@
+.post{
+    width: 200px;
+    height: 400px;
+    overflow: hidden;
+    border: 2px solid whitesmoke;
+    padding: 3px;
+}
+
+.post h2{
+    text-align: center;
+    height: 40%;
+}

@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit()" action="" #bookForm="ngForm">
+    
+    <input type="number" placeholder="id" id="id" name="id" [(ngModel)]="book.id" required>
+    <br>
+    <input type="number" placeholder="isbn" id="isbn" name="isbn" [(ngModel)]="book.isbn" required>
+    <br>
+    <input type="string" placeholder="title" id="title" name="title" [(ngModel)]="book.title" required>
+    <br>
+    <input type="string" placeholder="author" id="author" name="author" [(ngModel)]="book.author" required>
+    <br>
+    <select name="genre" id="genre" [(ngModel)]="book.genre">
+        <option *ngFor="let genre of genres" values="genre.name">{{genre.name}}</option>
+    </select>
+    <input type="string" placeholder="genre" id="genre" name="genre" [(ngModel)]="book.genre" required>
+    <br>
+    <input type="number" placeholder="pages" id="pages" name="pages" [(ngModel)]="book.pages" required>
+    <br>
+    <br>
+    <button type="submit" [disabled]="!bookForm.form.valid" >Adicionar Livro</button>
+</form>
+
+<div *ngIf="message">
+    <h3>{{message}}</h3>
+</div>

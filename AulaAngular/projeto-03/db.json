@@ -1,0 +1,258 @@
+{
+  "genres": [
+    {
+      "name": "Dystopian",
+      "description": "Ficção que explora uma sociedade futurista indesejável, frequentemente como uma crítica a tendências sociais ou políticas atuais."
+    },
+    {
+      "name": "Fiction",
+      "description": "Obras literárias baseadas em histórias e personagens inventados, não baseados em fatos reais."
+    },
+    {
+      "name": "Programming",
+      "description": "Livros que ensinam ou exploram tópicos relacionados à programação de computadores e desenvolvimento de software."
+    },
+    {
+      "name": "Science Fiction",
+      "description": "Ficção que explora cenários imaginativos baseados em avanços científicos e tecnológicos futuros."
+    },
+    {
+      "name": "Satire",
+      "description": "Ficção que usa humor, ironia ou exagero para criticar e expor falhas na sociedade, política ou comportamento humano."
+    },
+    {
+      "name": "Classic",
+      "description": "Livros que têm um impacto duradouro e são amplamente reconhecidos como exemplares na literatura."
+    },
+    {
+      "name": "Young Adult",
+      "description": "Ficção voltada para adolescentes, geralmente abordando temas e questões relevantes para essa faixa etária."
+    },
+    {
+      "name": "Post-Apocalyptic",
+      "description": "Ficção que se passa após uma catástrofe global, explorando a sobrevivência e o renascimento da sociedade."
+    },
+    {
+      "name": "Mystery",
+      "description": "Ficção que gira em torno da resolução de um mistério, frequentemente envolvendo crimes ou enigmas."
+    },
+    {
+      "name": "Fantasy",
+      "description": "Ficção que inclui elementos mágicos ou sobrenaturais, muitas vezes ambientada em mundos imaginários."
+    },
+    {
+      "name": "Thriller",
+      "description": "Ficção que provoca tensão e excitação, muitas vezes envolvendo mistérios e situações de perigo."
+    },
+    {
+      "name": "Autobiographical Fiction",
+      "description": "Ficção que é baseada em eventos da vida real do autor, misturando elementos autobiográficos com invenção."
+    },
+    {
+      "name": "Adventure",
+      "description": "Ficção que foca em jornadas emocionantes e desafios enfrentados pelos personagens, muitas vezes em cenários exóticos."
+    },
+    {
+      "name": "Philosophical Fiction",
+      "description": "Ficção que explora questões filosóficas profundas e temas existenciais através de suas histórias e personagens."
+    },
+    {
+      "name": "Psychological Thriller",
+      "description": "Ficção que explora a mente dos personagens e a interação psicológica, frequentemente envolvendo suspense e tensão."
+    },
+    {
+      "name": "Domestic Fiction",
+      "description": "Ficção que se concentra nas dinâmicas e conflitos das famílias e relações pessoais no contexto de ambientes cotidianos."
+    },
+    {
+      "name": "Historical Fiction",
+      "description": "Ficção que se passa em um período histórico específico, incorporando elementos históricos reais na narrativa."
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "isbn": 9780451524935,
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian",
+      "pages": 328
+    },
+    {
+      "id": 2,
+      "isbn": 9780061120084,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Fiction",
+      "pages": 281
+    },
+    {
+      "id": 3,
+      "isbn": 9780131101630,
+      "title": "The C Programming Language",
+      "author": "Brian W. Kernighan and Dennis M. Ritchie",
+      "genre": "Programming",
+      "pages": 272
+    },
+    {
+      "id": 4,
+      "isbn": 9780345391803,
+      "title": "The Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "genre": "Science Fiction",
+      "pages": 224
+    },
+    {
+      "id": 5,
+      "isbn": 9780452284234,
+      "title": "Catch-22",
+      "author": "Joseph Heller",
+      "genre": "Satire",
+      "pages": 453
+    },
+    {
+      "id": 6,
+      "isbn": 9780743273565,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Classic",
+      "pages": 180
+    },
+    {
+      "id": 7,
+      "isbn": 9780316769488,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "genre": "Fiction",
+      "pages": 277
+    },
+    {
+      "id": 8,
+      "isbn": 9780446310789,
+      "title": "The Outsiders",
+      "author": "S.E. Hinton",
+      "genre": "Young Adult",
+      "pages": 180
+    },
+    {
+      "id": 9,
+      "isbn": 9780374533557,
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "genre": "Post-Apocalyptic",
+      "pages": 287
+    },
+    {
+      "id": 10,
+      "isbn": 9780525563072,
+      "title": "Where the Crawdads Sing",
+      "author": "Delia Owens",
+      "genre": "Mystery",
+      "pages": 384
+    },
+    {
+      "id": 11,
+      "isbn": 9780385542536,
+      "title": "The Night Circus",
+      "author": "Erin Morgenstern",
+      "genre": "Fantasy",
+      "pages": 387
+    },
+    {
+      "id": 12,
+      "isbn": 9780316334754,
+      "title": "Big Little Lies",
+      "author": "Liane Moriarty",
+      "genre": "Thriller",
+      "pages": 460
+    },
+    {
+      "id": 13,
+      "isbn": 9780452284234,
+      "title": "The Bell Jar",
+      "author": "Sylvia Plath",
+      "genre": "Autobiographical Fiction",
+      "pages": 288
+    },
+    {
+      "id": 14,
+      "isbn": 9780143039433,
+      "title": "Life of Pi",
+      "author": "Yann Martel",
+      "genre": "Adventure",
+      "pages": 319
+    },
+    {
+      "id": 15,
+      "isbn": 9780452284234,
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "genre": "Philosophical Fiction",
+      "pages": 208
+    },
+    {
+      "id": 16,
+      "isbn": 9780399563254,
+      "title": "The Girl on the Train",
+      "author": "Paula Hawkins",
+      "genre": "Psychological Thriller",
+      "pages": 325
+    },
+    {
+      "id": 17,
+      "isbn": 9780316455010,
+      "title": "Little Fires Everywhere",
+      "author": "Celeste Ng",
+      "genre": "Domestic Fiction",
+      "pages": 338
+    },
+    {
+      "id": 18,
+      "isbn": 9780140177398,
+      "title": "A Tale of Two Cities",
+      "author": "Charles Dickens",
+      "genre": "Historical Fiction",
+      "pages": 489
+    },
+    {
+      "id": 19,
+      "isbn": 9780553386790,
+      "title": "The Da Vinci Code",
+      "author": "Dan Brown",
+      "genre": "Mystery",
+      "pages": 454
+    },
+    {
+      "id": 20,
+      "isbn": 9780385721677,
+      "title": "The Brief Wondrous Life of Oscar Wao",
+      "author": "Junot Díaz",
+      "genre": "Historical Fiction",
+      "pages": 335
+    },
+    {
+      "id": 1,
+      "isbn": 568565,
+      "title": "Harry Angular e A Hook Filosofal",
+      "author": "J.K. Script",
+      "genre": "Satire",
+      "pages": 3
+    },
+    {
+      "id": 22,
+      "isbn": 325225,
+      "title": "Percy Spring e o Ladrão de Endpoints",
+      "author": "Java Riordan",
+      "genre": "Post-Apocalyptic",
+      "pages": 5
+    },
+    {
+      "id": 23,
+      "isbn": 6548562,
+      "title": "Senhor dos Callbcaks - As Dua Requisições",
+      "author": "JWT - Json web Tolkien",
+      "genre": "Adventure",
+      "pages": 100
+    }
+  ]
+}

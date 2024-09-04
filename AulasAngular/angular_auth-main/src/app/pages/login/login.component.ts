@@ -3,7 +3,7 @@ import { Login } from '../../models/login.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,16 +18,17 @@ export class LoginComponent {
     password: ""
   };
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) { }
 
   onLogin(): void {
     this.authService.login(this.login).subscribe({
       next: (res: any) => {
         console.log(res);
 
-        localStorage.setItem("token_angular", res.access_token)
+        localStorage.setItem("token_angular", res.access_token);
 
-        this.router.navigateByUrl('');
+        // this.router.navigateByUrl(localStorage.getItem("redirectUrl") || '');
+        this.router.navigateByUrl(this.route.snapshot.queryParamMap.get('stateUrl') || '');
       },
       error: (error) => alert("Invalid data.")
     })

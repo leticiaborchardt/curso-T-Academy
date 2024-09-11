@@ -1,0 +1,8 @@
+<div class="feed-container">
+  
+    <app-post *ngFor="let post of posts" [post]="post"></app-post>
+  
+    <div *ngIf="isLoading" class="loading-spinner">
+      <span>Carregando...</span>
+    </div>
+  </div>

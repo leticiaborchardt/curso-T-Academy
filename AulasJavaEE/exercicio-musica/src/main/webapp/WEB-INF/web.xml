@@ -1,0 +1,31 @@
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>musicas</servlet-name>
+    <servlet-class>web.MusicaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>musicas</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>updateMusica</servlet-name>
+    <servlet-class>web.MusicaUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateMusica</servlet-name>
+    <url-pattern>/updateMusica</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>deleteMusica</servlet-name>
+    <servlet-class>web.MusicaDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteMusica</servlet-name>
+    <url-pattern>/deleteMusica</url-pattern>
+  </servlet-mapping>
+
+</web-app>

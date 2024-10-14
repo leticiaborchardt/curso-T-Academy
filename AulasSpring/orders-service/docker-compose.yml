@@ -1,0 +1,11 @@
+version: '4'
+services:
+  postgres:
+    image: postgres:15.0
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
